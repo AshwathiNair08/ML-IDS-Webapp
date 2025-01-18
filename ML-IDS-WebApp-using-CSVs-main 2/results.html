@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML IDS WebApp Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="Logo"><h2>ML IDS WebApp Results</h2></div>
+        <div class="menu-icon">&#9776;</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="results.html">Results</a>
+        </div>
+    </div>
+    <section>
+    <div class="resultContainer">
+        <h1>Analysis Results</h1>
+        <img src="anomalous_distribution_plot.png" id="plot1">
+        <img src="confusion_matrix_plot.png" alt="Run program to see graphs" id="plot2">
+        <div id="text-container">
+            <!-- The fetched text will be displayed here -->
+        </div>
+    </div>
+
+    </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Fetch the text file content
+        fetch('classification_report.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch the text file (${response.status} ${response.statusText})`);
+                }
+                return response.text();
+            })
+            .then(text => {
+                // Update the content of the HTML element with the fetched text
+                document.getElementById('text-container').innerText = text;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+</script>
+</body>
+</html>

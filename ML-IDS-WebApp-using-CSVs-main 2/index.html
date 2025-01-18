@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML IDS WebApp using Python</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src = "script.js"></script>
+    
+</head>
+<body>
+    <div class="navbar">
+        <div class="Logo"><h2>ML IDS WebApp Demo</h2></div>
+        <div class="menu-icon">&#9776;</div>
+        <div class="menu">
+            <a href="index.html">Analyse CSV</a>
+            <a href="results.html">View Results</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>CSV analysis using ML</h1>
+        <!-- Button to trigger file selection -->
+        <label for="fileInput" class="fileInputLabel">Select CSV files</label>
+        <input type="file" id="fileInput" accept=".csv" style="display: none" multiple onchange="handleFile()">
+        
+        <button onclick="handleAnalysis()">Analyze</button>
+
+
+        <!-- Clickable text to clear selected files -->
+        <br>
+        <span id="clearFiles" class="clearFiles" onclick="clearSelectedFiles()">Clear</span>
+        <br>
+    </div>
+</body>
+</html>

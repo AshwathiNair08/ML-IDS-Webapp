@@ -1,0 +1,8 @@
+              precision,    recall,  f1-score,   support
+
+       False,       1.00,      0.93,      0.97,        15
+        True,       0.91,      1.00,      0.95,        10
+
+    accuracy,           ,          ,      0.96,        25
+   macro avg,       0.95,      0.97,      0.96,        25
+weighted avg,       0.96,      0.96,      0.96,        25
